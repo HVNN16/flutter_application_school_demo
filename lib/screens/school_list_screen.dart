@@ -11,14 +11,13 @@ class SchoolListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final schoolProvider = Provider.of<SchoolProvider>(context);
-    final user = FirebaseAuth.instance.currentUser; // Lấy thông tin người dùng hiện tại
+    final user = FirebaseAuth.instance.currentUser; 
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Danh sách trường học'),
+        title: Text('SCHOOLS'),
         actions: [
           if (schoolProvider.isLoggedIn) ...[
-            // Đã đăng nhập: Hiển thị "Xin chào" và nút đăng xuất
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Center(
@@ -49,7 +48,6 @@ class SchoolListScreen extends StatelessWidget {
               },
             ),
           ] else ...[
-            // Chưa đăng nhập: Hiển thị nút đăng nhập
             IconButton(
               icon: Icon(Icons.login),
               tooltip: 'Đăng nhập',

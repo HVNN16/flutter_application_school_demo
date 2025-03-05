@@ -17,10 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
+      
       providers: [
         ChangeNotifierProvider(create: (_) => SchoolProvider()),
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'School Management',
         theme: ThemeData(primarySwatch: Colors.blue),
         home: SchoolListScreen(),
